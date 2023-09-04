@@ -1,99 +1,65 @@
 <template>
-  <div class="page page-home q-py-md p-pl-md q-pr-none q-mx-lg q-mr-sm q-mb-xl">
-    <h3 class="title title-greeting text-blue-grey-10">PartyX</h3>
+  <div class="page page-home">
+    <h3 class="title title-greeting">PartyX</h3>
     <h3 class="title title-user">Admin User</h3>
     <template v-if="hasUserSectionPermissions">
       <div class="text-subtitle2 section-name">Links to pages</div>
-      <div class="row items-start">
+      <div class="container">
         <template v-if="hasAgentPermissions">
-          <div class="home-card" clickable :to="{}">
-            <div class="col card-body">
-              <div class="row justify-center items-center q-pa-none card-icon">
-                person icon
-              </div>
-              <div class="row justify-center items-center q-pa-none card-text">
-                home create application
-              </div>
+          <div class="home-card" :to="{}">
+            <div class="box">
+              <div class="icon">person icon</div>
+              <div class="title">home create application</div>
             </div>
           </div>
 
-          <div class="home-card" clickable :to="{}">
-            <div class="col card-body">
-              <div class="row justify-center items-center q-pa-none card-icon">
-                snooze icon
-              </div>
-              <div class="row justify-center items-center q-pa-none card-text">
-                home saved app
-              </div>
+          <div class="home-card" :to="{}">
+            <div class="box">
+              <div class="icon">snooze icon</div>
+              <div class="title">home saved app</div>
             </div>
           </div>
         </template>
 
         <template v-if="hasAdvisorPermissions">
-          <div class="home-card" clickable :to="{}">
-            <div class="col card-body">
-              <div class="col card-body">
-                <div
-                  class="row justify-center items-center q-pa-none card-icon"
-                >
-                  man icon
-                </div>
-                <div
-                  class="row justify-center items-center q-pa-none card-text"
-                >
-                  home meeting today
-                </div>
-              </div>
+          <div class="home-card" :to="{}">
+            <div class="box">
+              <div class="icon">man icon</div>
+              <div class="title">home meeting today</div>
             </div>
           </div>
 
-          <div class="home-card" clickable :to="{}" v-if="bidsMockEnabled">
-            <div class="col card-body">
-              <div class="row justify-center q-pa-none card-icon">
-                assignment icon
-              </div>
-              <div class="row justify-center items-center q-pa-none card-text">
-                home mock bids
-              </div>
+          <div class="home-card" :to="{}" v-if="bidsMockEnabled">
+            <div class="box">
+              <div class="icon">assignment icon</div>
+              <div class="title">home mock bids</div>
             </div>
           </div>
         </template>
 
         <template v-if="hasCustomerServicePermission">
-          <div class="home-card" tag="a" clickable href="" target="_blanc">
-            <div class="col card-body">
-              <div class="row justify-center items-center q-pa-none card-icon">
-                phone icon
-              </div>
-              <div class="row justify-center items-center q-pa-none card-text">
-                customer service
-              </div>
+          <div class="home-card" tag="a" href="" target="_blanc">
+            <div class="box">
+              <div class="icon">phone icon</div>
+              <div class="title">customer service</div>
             </div>
           </div>
         </template>
 
         <template v-if="hasMeetingUserPermission">
-          <div class="home-card" tag="a" clickable href="" target="_blanc">
-            <div class="col card-body">
-              <div class="row justify-center items-center q-pa-none card-icon">
-                girl icon
-              </div>
-              <div class="row justify-center items-center q-pa-none card-text">
-                meeting management
-              </div>
+          <div class="home-card" tag="a" href="" target="_blanc">
+            <div class="box">
+              <div class="icon">girl icon</div>
+              <div class="title">meeting management</div>
             </div>
           </div>
         </template>
 
-        <div class="home-card" tag="a" clickable href="" target="_blanc">
-          <div class="col card-body">
-            <div class="row justify-center items-center q-pa-none card-icon">
-              source icon
-            </div>
+        <div class="home-card" tag="a" href="" target="_blanc">
+          <div class="box">
+            <div class="icon">source icon</div>
 
-            <div class="row justify-center items-center q-pa-none card-text">
-              home sales templates
-            </div>
+            <div class="title">home sales templates</div>
           </div>
         </div>
       </div>
@@ -101,83 +67,52 @@
 
     <template v-if="hasCoachPermissions || hasPartnerAdminPermissions">
       <div class="text-subtitle2 section-name">Partner</div>
-      <div class="row items-start">
+      <div class="container">
         <template v-if="hasAgentPermissions">
-          <div class="home-card" clickable :to="{}">
-            <div class="col card-body">
-              <div class="row justify-center items-center q-pa-none card-icon">
-                person icon
-              </div>
-              <div class="row justify-center items-center q-pa-none card-text">
-                home create application
-              </div>
+          <div class="home-card" :to="{}">
+            <div class="box">
+              <div class="icon">person icon</div>
+              <div class="title">home create application</div>
             </div>
           </div>
 
-          <div class="home-card" clickable :to="{}">
-            <div class="col card-body">
-              <div class="row justify-center items-center q-pa-none card-icon">
-                snooze icon
-              </div>
-              <div class="row justify-center items-center q-pa-none card-text">
-                home saved app
-              </div>
+          <div class="home-card" :to="{}">
+            <div class="box">
+              <div class="icon">snooze icon</div>
+              <div class="title">home saved app</div>
             </div>
           </div>
         </template>
 
         <template v-if="hasAdvisorPermissions">
-          <div class="home-card" clickable :to="{}">
-            <div class="col card-body">
-              <div class="col card-body">
-                <div
-                  class="row justify-center items-center q-pa-none card-icon"
-                >
-                  man icon
-                </div>
-                <div
-                  class="row justify-center items-center q-pa-none card-text"
-                >
-                  home meeting today
-                </div>
-              </div>
+          <div class="home-card" :to="{}">
+            <div class="box">
+              <div class="icon">man icon</div>
+              <div class="title">home meeting today</div>
             </div>
           </div>
 
-          <div class="home-card" clickable :to="{}" v-if="bidsMockEnabled">
-            <div class="col card-body">
-              <div class="row justify-center q-pa-none card-icon">
-                assignment icon
-              </div>
-              <div class="row justify-center items-center q-pa-none card-text">
-                home mock bids
-              </div>
+          <div class="home-card" :to="{}" v-if="bidsMockEnabled">
+            <div class="box">
+              <div class="icon">assignment icon</div>
+              <div class="title">home mock bids</div>
             </div>
           </div>
         </template>
 
         <template v-if="hasCustomerServicePermission">
-          <div class="home-card" tag="a" clickable href="" target="_blanc">
-            <div class="col card-body">
-              <div class="row justify-center items-center q-pa-none card-icon">
-                phone icon
-              </div>
-              <div class="row justify-center items-center q-pa-none card-text">
-                customer service
-              </div>
+          <div class="home-card" tag="a" href="" target="_blanc">
+            <div class="box">
+              <div class="icon">phone icon</div>
+              <div class="title">customer service</div>
             </div>
           </div>
         </template>
 
-        <div class="home-card" tag="a" clickable href="" target="_blanc">
-          <div class="col card-body">
-            <div class="row justify-center items-center q-pa-none card-icon">
-              source icon
-            </div>
-
-            <div class="row justify-center items-center q-pa-none card-text">
-              home sales templates
-            </div>
+        <div class="home-card" tag="a" href="" target="_blanc">
+          <div class="box">
+            <div class="icon">source icon</div>
+            <div class="title">home sales templates</div>
           </div>
         </div>
       </div>
@@ -185,61 +120,39 @@
 
     <template v-if="hasAdminPermissions">
       <div class="text-subtitle2 section-name">Admin</div>
-      <div class="row items-start">
-        <div class="home-card" clickable :to="{}">
-          <div class="col card-body">
-            <div class="row justify-center items-center q-pa-none card-icon">
-              person icon
-            </div>
-            <div class="row justify-center items-center q-pa-none card-text">
-              home create application
-            </div>
+      <div class="container">
+        <div class="home-card" :to="{}">
+          <div class="box">
+            <div class="icon">person icon</div>
+            <div class="title">home create application</div>
           </div>
         </div>
 
-        <div class="home-card" clickable :to="{}">
-          <div class="col card-body">
-            <div class="row justify-center items-center q-pa-none card-icon">
-              snooze icon
-            </div>
-            <div class="row justify-center items-center q-pa-none card-text">
-              home saved app
-            </div>
+        <div class="home-card" :to="{}">
+          <div class="box">
+            <div class="icon">snooze icon</div>
+            <div class="title">home saved app</div>
           </div>
         </div>
 
-        <div class="home-card" clickable :to="{}">
-          <div class="col card-body">
-            <div class="col card-body">
-              <div class="row justify-center items-center q-pa-none card-icon">
-                man icon
-              </div>
-              <div class="row justify-center items-center q-pa-none card-text">
-                home meeting today
-              </div>
-            </div>
+        <div class="home-card" :to="{}">
+          <div class="box">
+            <div class="icon">man icon</div>
+            <div class="title">home meeting today</div>
           </div>
         </div>
 
-        <div class="home-card" clickable :to="{}" v-if="bidsMockEnabled">
-          <div class="col card-body">
-            <div class="row justify-center q-pa-none card-icon">
-              assignment icon
-            </div>
-            <div class="row justify-center items-center q-pa-none card-text">
-              home mock bids
-            </div>
+        <div class="home-card" :to="{}" v-if="bidsMockEnabled">
+          <div class="box">
+            <div class="icon">assignment icon</div>
+            <div class="title">home mock bids</div>
           </div>
         </div>
 
-        <div class="home-card" tag="a" clickable href="" target="_blanc">
-          <div class="col card-body">
-            <div class="row justify-center items-center q-pa-none card-icon">
-              phone icon
-            </div>
-            <div class="row justify-center items-center q-pa-none card-text">
-              customer service
-            </div>
+        <div class="home-card" tag="a" href="" target="_blanc">
+          <div class="box">
+            <div class="icon">phone icon</div>
+            <div class="title">customer service</div>
           </div>
         </div>
       </div>
@@ -269,68 +182,63 @@
 </script>
 
 <style lang="scss" scoped>
-  .page-home {
+  .page {
+    padding: 20px;
+    background-color: #f5f5f5;
+    font-family: "Arial", sans-serif;
+
     .title {
-      font-size: 30px;
-      letter-spacing: 0px;
-      margin: 0px;
-    }
+      color: #333;
+      margin-bottom: 20px;
 
-    .title-greeting {
-      margin-top: 10px;
-      font-weight: bold;
-    }
+      &.title-greeting {
+        font-size: 28px;
+      }
 
-    .title-user {
-      margin-top: 5px;
-      font-weight: 300;
+      &.title-user {
+        font-size: 20px;
+        color: #555;
+      }
     }
 
     .section-name {
-      margin-top: 45px;
-      letter-spacing: 0px;
-      color: #131390;
-      font-size: 14px;
-      font-weight: bold;
+      font-size: 18px;
+      color: #444;
+      margin-top: 20px;
+      margin-bottom: 10px;
     }
 
-    .home-card {
-      width: 220px;
-      height: 126px;
-      box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.16);
-      border-radius: 4px;
-      margin-right: 26px;
-      margin-top: 20px;
-      background-color: rgb(241, 238, 233);
-      padding: 16px;
-      text-decoration: none;
-      cursor: pointer;
-      color: #131390;
+    .container {
+      display: flex;
+      flex-wrap: wrap;
 
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.06);
-      }
+      .home-card {
+        border-radius: 5px;
+        width: calc(33.33% - 20px);
+        margin: 10px;
+        background-color: #fff;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        text-decoration: none;
 
-      .card-icon {
-        margin-top: 10px;
-
-        svg {
-          width: 33px;
-          height: 33px;
+        &:hover {
+          transform: translateY(-5px);
         }
-      }
 
-      .card-body {
-        width: 100%;
-      }
+        .box {
+          padding: 20px;
+          height: 100px;
 
-      .card-text {
-        text-align: center;
-        font-size: 14px;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.32px;
-        margin-top: 13px;
+          .icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+          }
+
+          .title {
+            font-size: 16px;
+            color: #666;
+          }
+        }
       }
     }
   }
